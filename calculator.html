@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Column Distance Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .calculator {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Excel Column Distance Calculator</h1>
+        <input type="text" id="col1" placeholder="Column 1 (e.g., A)">
+        <input type="text" id="col2" placeholder="Column 2 (e.g., AB)">
+        <br>
+        <button onclick="calculateDistance()">Calculate Distance</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function columnToNumber(column) {
+            let number = 0;
+            for (let i = 0; i < column.length; i++) {
+                number = number * 26 + (column.charCodeAt(i) - 'A'.charCodeAt(0) + 1);
+            }
+            return number;
+        }
+
+        function calculateDistance() {
+            const col1 = document.getElementById('col1').value.toUpperCase();
+            const col2 = document.getElementById('col2').value.toUpperCase();
+
+            if (col1 && col2) {
+                const num1 = columnToNumber(col1);
+                const num2 = columnToNumber(col2);
+                const distance = Math.abs(num2 - num1);
+                document.getElementById('result').textContent = `The distance between ${col1} and ${col2} is ${distance}`;
+            } else {
+                document.getElementById('result').textContent = "Please enter valid column indices.";
+            }
+        }
+    </script>
+</body>
+</html>
