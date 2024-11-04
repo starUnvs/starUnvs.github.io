@@ -29,8 +29,8 @@ body {
 }
 
 .card {
-    width: 270px;
-    height: 350px;
+    width: 260px;
+    height: 400px;
     perspective: 1000px;
 }
 
