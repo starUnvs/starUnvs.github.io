@@ -7,7 +7,7 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f8;
-    background-image: url("background1.png");
+    background-image: linear-gradient(to right, rgba(255,255,255, 0.35) 0 100%), url(background2.png);;
     background-repeat: no-repeat;
     background-size: 130%; /* Adjust to cover the card area without tiling */
     background-position: center; /* Center the image on the card */
