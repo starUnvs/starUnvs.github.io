@@ -7,7 +7,10 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f8;
-    background-image: url("image.png");
+    background-image: url("background1.png");
+    background-repeat: no-repeat;
+    background-size: 130%; /* Adjust to cover the card area without tiling */
+    background-position: center; /* Center the image on the card */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,14 +63,14 @@ body {
 }
 
 .card-front1 {
-    background: linear-gradient(135deg, #ff6e00, #ff0000);
+    background: linear-gradient(135deg, #4632ff, #00aaff);
     color: #fff;
     font-size: 2em;
     font-weight: bold;
 }
 
 .card-front2 {
-    background: linear-gradient(135deg, #4632ff, #00aaff);
+    background: linear-gradient(135deg, #ff6e00, #ff0000);
     color: #fff;
     font-size: 2em;
     font-weight: bold;
